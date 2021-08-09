@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <section id="form-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-8">
+                    <h1 class="home-title mb-1">Face Detect App</h1>
+                    <h2 class="home-subtitle">Upload an image for face, emotion and celebrity name detection.</h2>
+                </div>
+                <div class="col-4">
+                    <form class="" action="#" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            {{ form.image }}
+                            <input type="submit" value="upload" class="btn btn-primary submit-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+                <div class="row results-row mt-5">
+                    <div class="col-6">
+                         {% if upload %}
+                        <table class="table main-table">
+                            <tr>
+                                <td></td>
+                                {% for num in results.count %}
+                                    <td>
+                                        <img class="face-img img-fluid" src="/media/outputs/roi_{{ num }}.jpg"
+                                             alt="Face_{{ num }}">
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                            <tr>
+                                <th scope="row">Name</th>
+                                {% for name in results.face_name %}
+                                    <td>{{ name }}</td>
+                                {% endfor %}
+                            </tr>
+                            <tr>
+                                <th scope="row">Name Confidence</th>
+                                {% for name_score in results.face_name_score %}
+                                    <td>{{ name_score }} %</td>
+                                {% endfor %}
+                            </tr>
+                            <tr>
+                                <th scope="row">Emotion</th>
+                                {% for emotion in results.emotion_name %}
+                                    <td>{{ emotion }}</td>
+                                {% endfor %}
+                            </tr>
+                            <tr>
+                                <th scope="row">Emotion Confidence</th>
+                                {% for emotion_score in results.emotion_name_score %}
+                                    <td>{{ emotion_score }} %</td>
+                                {% endfor %}
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-6 align-self-center">
+                        <img class="process-img img-fluid" src="/media/outputs/result.jpg">
+                    </div>
+                         {% endif %}
+                </div>
+
+            </div>
+    </section>
+{% endblock %}

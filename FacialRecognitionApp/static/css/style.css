@@ -1,0 +1,87 @@
+/*
+Light Blue - #1a9dee
+Dark BG Blue - #141c27
+Light Grey - #9ea7b0
+Roboto - 'Roboto', sans-serif;
+ */
+
+body {
+     background-color: #000000;
+     font-family: 'Roboto', sans-serif;
+     color: #9ea7b0;
+}
+ a {
+     color: #FFFFFF;
+     text-decoration: none;
+     background-color: transparent;
+     -webkit-text-decoration-skip: objects;
+}
+ a:hover {
+     color: #1a9dee;
+     text-decoration: underline;
+}
+ a:not([href]):not([tabindex]) {
+     color: inherit;
+     text-decoration: none;
+}
+ a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+     color: inherit;
+     text-decoration: none;
+}
+ a:not([href]):not([tabindex]):focus {
+     outline: 0;
+}
+ #form-section .container {
+     background-color: #141c27;
+     padding: 1%;
+}
+ .form-row {
+     min-height: 500px;
+}
+ .dark-bg {
+     background-color: #000000;
+}
+ .logo {
+     width: 45px;
+     height: auto;
+}
+ .home-title {
+     font-size: 2.75rem;
+     color: #FFFFFF;
+     text-transform: uppercase;
+     font-weight: 500;
+     letter-spacing: 1px;
+}
+ .home-subtitle {
+     text-transform: uppercase;
+     font-size: 1rem;
+     font-weight: 400;
+     color: #1a9dee;
+}
+ .submit-btn {
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     background-color: #1a9dee;
+     border-radius: unset;
+}
+ .form-control {
+     background: none;
+     border: none;
+     color: #FFFFFF;
+}
+ .upload-icon {
+     width: 18px;
+     height: auto;
+     margin-top: -2px;
+     padding-right: 2px;
+}
+ .face-img {
+     max-width: 100px;
+     height: auto;
+}
+ .table th, .table td {
+     text-transform: capitalize;
+}
+ #footer {
+     text-transform: uppercase;
+}
